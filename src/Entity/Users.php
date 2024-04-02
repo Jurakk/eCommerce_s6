@@ -49,7 +49,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $city = null;
 
     #[ORM\Column(options: ['default' => 'CURRENT_TIMESTAMP'])]
-    //private ?\DateTimeImmutable $created_at = null;
+    private ?\DateTimeImmutable $created_at = null;
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
@@ -196,10 +196,10 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): static
-    {
-        $this->created_at = $created_at;
+    // public function setCreatedAt(\DateTimeImmutable $created_at): static
+    // {
+    //     $this->created_at = $created_at;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 }
